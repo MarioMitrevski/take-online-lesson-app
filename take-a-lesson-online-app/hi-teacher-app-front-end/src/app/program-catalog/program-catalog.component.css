@@ -1,0 +1,58 @@
+.biggerContainer{
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.smallContainer{
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 5%;
+  display: flex;
+  align-content: center;
+}
+
+.selectSortType{
+  width: 90%;
+}
+
+h1{
+  color: #3F51B5;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+.leftTopAlign{
+  height: 100%;
+  width: 80%;
+}
+
+.leftTopAlignWider{
+  height: 100%;
+  width: 100%;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+
+.categoryList{
+  width: 35%;
+  align-items: baseline;
+}
+
+.coursesList{
+  width: 65%;
+  align-items: center;
+}
+
+mat-paginator{
+  background-color: #ededed;
+}
+
+::ng-deep .mat-paginator{
+  font-size: 1rem;
+}

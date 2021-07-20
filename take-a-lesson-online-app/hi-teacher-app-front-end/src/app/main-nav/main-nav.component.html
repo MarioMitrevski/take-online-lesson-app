@@ -1,0 +1,49 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+               [ngClass]="{hidden: !(isHandset$ | async)}"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>HiTeach</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/programmes">Full Catalog</a>
+      <a *ngIf="currentRole === 'Teacher'" routerLink="courses/inprogress" mat-list-item>Lecturing Courses</a>
+      <a *ngIf="currentRole === 'Student'" routerLink="courses/inprogress" mat-list-item>Attending Courses</a>
+      <a *ngIf="currentRole === 'Teacher'" mat-list-item routerLink="createCourse" routerLinkActive>Create Course</a>
+      <a mat-list-item routerLink="/sign-up" routerLinkActive>Sign Up</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async else mainNav">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <ng-template #mainNav>
+        <span>HiTeach</span>
+        <span class="spacer"></span>
+        <a routerLink="programmes">Full Catalog</a>
+        <a *ngIf="currentRole === 'Teacher'" routerLink="courses/inprogress">Lecturing Courses</a>
+        <a *ngIf="currentRole === 'Student'" routerLink="courses/inprogress">Attending Courses</a>
+        <a *ngIf="currentRole === 'Teacher'" routerLink="createCourse" routerLinkActive>Create Course</a>
+        <span class="smallBorder"> | </span>
+        <a href="#" routerLink="sign-in" routerLinkActive *ngIf="!loggedIn">Sign In</a>
+        <p *ngIf="loggedIn">Hi, {{name}}</p>
+        <div class="scaleDiv" *ngIf="loggedIn">
+          <img src='{{imageUrl}}' [matMenuTriggerFor]="menu" alt="profile pic" class="responsive">
+          <mat-menu class="menu-overflow-hidden" #menu="matMenu">
+            <button mat-menu-item>My Profile</button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="onLogOut()"> Log Out</button>
+          </mat-menu>
+        </div>
+        <button mat-raised-button color="accent" *ngIf="!loggedIn" (click)="toSignUp()">Get Started</button>
+      </ng-template>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

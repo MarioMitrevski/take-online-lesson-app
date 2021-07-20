@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hiteacher",
+  "private_key_id": "28456db2aae62176562399b8f7beb671c3e3ce35",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC6jrXNBVPAUyNP\naSCUlrmk4Avph2W2Lw9d4+cGzpGZNyUlqEZ85QugZlSz1FLfs3KC5elEJV82+vf2\nmoEMQnhGxrqwUpRIx4QPsgT53O3lpCq7SCXrHNCV3MGHlwwzTdaNKHNFB2ViRu/v\nB7trf+3Inu3G19MevQf3sghNKNz0XNHdqvxRMT2ZriM++6MzpzZBhJyZN6MPWNvz\nqXjAQFfcdkHo/G7Gzwt5z2dJx9WEH7y1qOg9cm0WDkC1skyZBD8YXLxjD4KRLXyl\nHj5Ct8dpd2kBOtGsU81CXvTAdf7yXMVEc5VRgY4HldmBbJ8YAqrjyBMfk6dk81jG\ntMzE4vmnAgMBAAECggEAOJd/BdUGXXK65OV+mSSJ5z6BzpMgox3ueuxeEj4Kg+Br\nF9vOmid/GebA7hZMF4kfhR7KXr45fnuuSbP/zqDBTLMPQdqjGdrQMFSv1r4SupVM\n0yglPIeurK9dU8zZyhxkJ8jsArYmJqRfN3Lwg0E4+CFh/u5MoGf2aUir5QAu2r9i\noMjq14rf8nLCQ09ZqGNDB/WjVN9pKeKLHaxhQfuelC+PfRt9BWNoznZyCsCOEIBy\nxELOXkDkm9/IIAs5JK1sfBPLu9ztcXa5eUDY8D6NvTja768KndrT+mS9L1PUPfYs\ndcPSaQD5SHaR76KjbLILs55h1NvYDLHtPsHcaY5ZBQKBgQDogRZ/BzjhHEs2WqZ4\nyitYfSy3hh04WUtTrADuVhNP63svmEodp2DrdXZDzw3ZpNOl6MKcV/8s1vKwtB9o\nLPmG3xw1SwvWvwDU3Rz0joUKElRrKE9svCpJ98eW+Gt9m/cyY58ddYJiD3UiLoin\n7fejcl2JVTLt5YlBsooTnsH/6wKBgQDNaPk3tyGyRzrUjbo0eo9JJr8qBIKv+O7a\nX8HyoSzFztEBu+df6dztuk1z5LIuzMEXiBwsAyDQh3iV5kvDmz90fa0vjeg2rk22\nGCJT4ca3FcdP6wMLnLUZ3XGLtmzaGdZtoeqBPGu4fVrA90oXeyYcUH7EwD3Ns30z\nRuNF+ol6NQKBgQCxpYAkysXg6hdljlnHzODVmb7C8sv8s+1kHvYPJOFYnRngQcHP\naoYZIgScxuVUOCYmi/O2NV4ZSprf/KBKnqKBNJN+/Los+H+QJOnsycBI87xgq8oT\n0KmXHqT3axPmQ3ban1eB0LkwZ5Md7OQpOx+NWOKy/dAOCOWYtuvdFd4wxQKBgHnI\n6zmlUk0o/jBXdzb2E04DswNueS1sIfFHJO59sNX2sOSeS6gKN/qaoqE7zokAzNru\n0AUoNaRtLYlyaSkoOo8OlEfFkxAYd+qmlHO3QOH7/5fadovD9XvIVzHGjvMgromB\nnk/RSuyvJceS1lLlqMrQzthIQlxbNrfYJ5et2yShAoGACxJOgPAd/g/fTCU+2l1U\nraDUnf7kx9YEYPXjHrlaejDs9+uJ4FAuD9V44eJ/e1kqtyyjghHwmsQ8RE/e8YxL\nB7IXe3nJhEQjTiVonnlRdRwIZo8iWyGC9CdaNN7sTQsOh2gDnmRirZk3IpZblNqW\n9+4lvzbBIRReMZlTOmaypqw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "hi-teacher-service-account@hiteacher.iam.gserviceaccount.com",
+  "client_id": "116081393568001056276",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/hi-teacher-service-account%40hiteacher.iam.gserviceaccount.com"
+}

@@ -1,0 +1,23 @@
+<div class="biggerContainer">
+  <mat-tab-group mat-align-tabs="center" [(selectedIndex)]="currentSelectedIndex"
+                 (selectedIndexChange)="onCourseStatusChanged($event)">
+    <mat-tab label="In Progress">
+      <div class="mat-elevation-z4">
+        <app-courses-list
+          [showEditButtons]="showEditButtons"
+          [courses]="inProgressCourses | async">
+        </app-courses-list>
+      </div>
+    </mat-tab>
+    <mat-tab label="Upcoming">
+      <div class="mat-elevation-z4">
+        <app-courses-list [showEditButtons]="showEditButtons" [courses]="upComingCourses | async"></app-courses-list>
+      </div>
+    </mat-tab>
+    <mat-tab label="Finished">
+      <div class="mat-elevation-z4">
+        <app-courses-list [showEditButtons]="showEditButtons" [courses]="finishedCourses | async"></app-courses-list>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

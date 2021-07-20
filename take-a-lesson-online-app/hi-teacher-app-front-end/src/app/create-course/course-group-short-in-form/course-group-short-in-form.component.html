@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-grid-list cols="4" rowHeight="4:1">
+    <mat-grid-tile colspan="1">
+      <div class="leftTopAlign">
+        <p *ngIf="courseGroup">{{courseGroup.CourseGroupName}}</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <div class="leftTopAlign">
+        <p *ngIf="courseGroup">Number of students: {{courseGroup.MaxStudents}}</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <div class="leftTopAlign">
+        <p *ngIf="courseGroup">Date Starting: {{courseGroup.DateTimeSlots[0].Date}}</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <div class="leftTopAlign">
+        <button mat-raised-button style="float: right" type="button" (click)="onDeleteCourseGroup(rowNumber)">Delete</button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>

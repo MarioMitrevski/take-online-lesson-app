@@ -1,0 +1,31 @@
+<form [formGroup]="basicCourseInfoForm">
+  <mat-form-field>
+    <mat-label>Course Title</mat-label>
+    <input matInput formControlName="courseTitle" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Course Category</mat-label>
+    <mat-select formControlName="courseCategory" required>
+      <mat-option *ngFor="let category of categories$ | async" value="{{category.categoryId}}">{{category.categoryName}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Price per student per session</mat-label>
+    <input matInput  type="number" formControlName="pricePerStudentPerSession" required>
+    <span matPrefix>$&nbsp;</span>
+    <span matSuffix>.00</span>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Course Description</mat-label>
+    <textarea matInput formControlName="courseDescription" required></textarea>
+  </mat-form-field>
+
+  <p>
+    <label for="courseProfilePicture">Choose a profile picture:</label>
+    <input type="file" id="courseProfilePicture" (change)="onCoursePhotoSelected($event)" formControlName="coursePhoto" accept="image/png, image/jpg, image/jpeg">
+  </p>
+
+  <div>
+    <button mat-raised-button color="accent" [disabled]="basicCourseInfoForm.invalid" type="button" matStepperNext>Next</button>
+  </div>
+</form>

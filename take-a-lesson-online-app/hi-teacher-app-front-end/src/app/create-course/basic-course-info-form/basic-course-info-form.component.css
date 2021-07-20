@@ -1,0 +1,13 @@
+form{
+  width: 100%;
+}
+
+label{
+  margin-right: 1% ;
+}
+
+
+
+mat-form-field{
+  width: 80%;
+}

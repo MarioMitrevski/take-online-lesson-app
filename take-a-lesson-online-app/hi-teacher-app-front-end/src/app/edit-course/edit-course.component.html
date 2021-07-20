@@ -1,0 +1,75 @@
+<div class="biggerContainer" *ngIf="editCourse">
+  <h2>Edit Course</h2>
+  <form [formGroup]="editCourse" (ngSubmit)="onSubmit()">
+    <div class="example-section">
+      <mat-form-field style="width: 50%" class="example-margin centering">
+        <mat-label>Course Name</mat-label>
+        <input matInput formControlName="CourseTitle" required>
+      </mat-form-field>
+      <mat-form-field style="width: 50%" class="example-margin centering">
+        <mat-label>Price per student per session</mat-label>
+        <input matInput type="number" formControlName="PricePerStudentForSession" required>
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
+    </div>
+    <div class="example-section" style="margin-top: 1%">
+      <div style="width: 50%; align-self: baseline" class="example-margin">
+        <mat-form-field style="width: 100%" appearance="fill">
+          <mat-label>Course Description</mat-label>
+          <textarea rows="3" matInput formControlName="CourseDescription" required></textarea>
+        </mat-form-field>
+      </div>
+      <div style=" width:50%;align-self: baseline" class="example-margin">
+        <mat-form-field style="width: 100%" appearance="fill">
+          <mat-label>Course Category</mat-label>
+          <mat-select formControlName="CategoryId" required>
+            <mat-option *ngFor="let category of categories$ | async"
+                        value="{{category.categoryId}}">{{category.categoryName}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <h3>Edit Course Themes</h3>
+    <button mat-raised-button (click)="onThemeAdded()" color="accent" type="button">
+      Add Course Theme
+    </button>
+    <div formArrayName="CourseThemes">
+      <div [formGroupName]="i" *ngFor="let courseTheme of courseThemes.controls;let i = index" class="example-section">
+        <div class="example-margin" style="width: 45%;align-self: baseline">
+          <mat-form-field appearance="fill">
+            <mat-label>Course Theme {{i + 1}} Title</mat-label>
+            <input matInput formControlName="CourseThemeName" required>
+          </mat-form-field>
+        </div>
+        <div class="example-margin" style="width: 45%;align-self: baseline">
+          <mat-form-field appearance="fill">
+            <mat-label>Course Theme {{i + 1}} Description</mat-label>
+            <textarea rows="3" matInput formControlName="CourseThemeDescription" required></textarea>
+          </mat-form-field>
+        </div>
+        <div class="example-margin" style="width: 5%; align-self: center">
+          <button type="button" mat-raised-button color="accent" (click)="onThemeDeletion(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <h3>Edit Course Groups</h3>
+    <button style="margin-bottom:3%" mat-raised-button (click)="onCourseGroupAdded()" color="accent" type="button">
+      Add Course Group
+    </button>
+    <mat-accordion formArrayName="CourseGroups">
+      <app-edit-course-group *ngFor="let cg of courseGroups.controls;let i = index"
+                             [courseGroupArrayIndex]="i"
+                             [courseGroupName]="cg.value.CourseGroupName"
+                             [courseGroupFormGroup]="cg"
+                             (deleteCourseGroup)="courseGroupDeletion($event)"></app-edit-course-group>
+    </mat-accordion>
+
+    <button style="margin-top:3%" mat-raised-button color="primary" type="submit">
+      Edit Course
+    </button>
+  </form>
+
+</div>

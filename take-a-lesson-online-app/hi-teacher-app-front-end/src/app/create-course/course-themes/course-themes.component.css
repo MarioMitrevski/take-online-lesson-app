@@ -1,0 +1,19 @@
+.example-section {
+  display: flex;
+  align-content: center;
+}
+
+form{
+  width: 100%;
+  margin-top: 2%;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+
+.example-margin {
+  margin: 0 2%;
+}
+

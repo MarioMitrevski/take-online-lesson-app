@@ -1,0 +1,29 @@
+<form [formGroup]="courseContentForm">
+  <div formArrayName="themes">
+    <div [formGroupName]="i" *ngFor="let courseTheme of courseThemes.controls;let i = index" class="example-section">
+      <div class="example-margin" style="width: 45%;align-self: baseline">
+        <mat-form-field>
+          <mat-label>Course Theme {{i + 1}} Title</mat-label>
+          <input matInput formControlName="courseThemeTitle" required>
+        </mat-form-field>
+      </div>
+      <div class="example-margin" style="width: 45%;align-self: baseline">
+        <mat-form-field appearance="fill" >
+          <mat-label>Course Theme {{i + 1}} Description</mat-label>
+          <textarea rows="3" matInput formControlName="courseThemeDescription" required></textarea>
+        </mat-form-field>
+      </div>
+      <div class="example-margin" style="width: 5%; align-self: center">
+        <button  type="button" mat-raised-button color="accent" (click)="onThemeDeletion(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" style="margin-right: 2%" type="button" (click)="onThemeAdded()">Add Course
+      Theme
+    </button>
+    <button mat-raised-button color="accent" [disabled]="courseContentForm.invalid || courseThemes.length==0" matStepperNext> Next</button>
+  </div>
+</form>

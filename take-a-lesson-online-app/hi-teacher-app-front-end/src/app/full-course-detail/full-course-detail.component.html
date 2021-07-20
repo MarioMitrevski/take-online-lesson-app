@@ -1,0 +1,60 @@
+<div class="biggerContainer" *ngIf="courseDetail">
+  <mat-grid-list cols="2" rowHeight="6:1">
+    <mat-grid-tile>
+      <div class="fromStart">
+        <h1>{{courseDetail.courseTitle}}</h1>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="fromEnd">
+        <button mat-raised-button color="accent" type="button" (click)="toCourseEnroll(courseId)" class="enrollButton">
+          ENROLL NOW
+        </button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-card>
+    <mat-grid-list cols="3" rowHeight="2:1">
+      <mat-grid-tile colspan="2">
+        <div class="leftAlign">
+          <h2>What You Will Learn</h2>
+          <p>
+            {{courseDetail.courseDescription}}
+          </p>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        <img class="tile-image" src="{{courseDetail.imageUrl}}" alt="cloud">
+      </mat-grid-tile>
+    </mat-grid-list>
+    <div class="example-section">
+      <div style="width: 65%" class="example-margin">
+        <mat-chip-list>
+          <mat-chip color="primary" selected>
+            {{courseDetail.category.categoryName}}
+          </mat-chip>
+        </mat-chip-list>
+        <mat-list style="margin-top: 2%">
+          <div mat-subheader> Course Themes</div>
+          <mat-list-item style="margin-bottom: 4%" *ngFor="let courseTheme of courseDetail.courseThemes">
+            <mat-icon mat-list-icon>label</mat-icon>
+            <h3 mat-line><b>{{courseTheme.courseThemeName}}</b></h3>
+            <h4 matLine>
+              <span>{{courseTheme.courseThemeDescription}}</span>
+            </h4>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <div style="width: 35%">
+        <mat-card class="basicInfoCard" style="margin-bottom: 5%">
+          <h3>Price Per Session: <span style="color: #E91E63">{{courseDetail.pricePerStudentForSession}}</span></h3>
+          <h3>Starting Date: <span style="color: #E91E63">{{courseDetail.startDate}}</span></h3>
+        </mat-card>
+        <mat-card class="basicInfoCard" *ngIf="courseDetail.teacher.teacherDescription">
+          <h2>Teacher Information:</h2>
+          <h4>{{courseDetail.teacher.teacherDescription}}</h4>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,28 @@
+form{
+  width: 100%;
+}
+
+
+mat-form-field{
+  width: 80%;
+}
+
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+
+.timeSlotAddButton{
+  margin-bottom: 3%;
+}
+
+.putDown{
+  margin-bottom: 2%;
+}

@@ -1,0 +1,21 @@
+<mat-card>
+  <div class="imageSection example-margin">
+    <img src="{{imageUrl}}" alt="coursePhoto">
+  </div>
+  <div class="shortDetailsSection example-margin">
+    <div class="example-section">
+      <div class="mainInfoSection">
+        <h3>{{courseTitle}}</h3>
+        <p>Price Per Session: {{pricePerSession}}$</p>
+        <button *ngIf="!showEditButtons" (click)="openCourseDetails()" mat-raised-button color="accent" style="margin-right: 2%">Enroll</button>
+        <button *ngIf="showEditButtons"
+                mat-raised-button color="primary"
+                style="margin-right: 2%"
+                (click)="editCourse(courseId)">Edit Course
+        </button>
+        <button *ngIf="showEditButtons" (click)="onDeleteCourse()" mat-raised-button color="warn">Delete Course</button>
+      </div>
+    </div>
+
+  </div>
+</mat-card>

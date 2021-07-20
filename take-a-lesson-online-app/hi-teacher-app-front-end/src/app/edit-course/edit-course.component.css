@@ -1,0 +1,34 @@
+.biggerContainer{
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+h2{
+  color: #3F51B5;
+}
+
+h3{
+  color: #3F51B5;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+
+.centering{
+  align-self: center;
+}
+
+.bottoming{
+  align-self: end !important;
+}
+
+mat-form-field{
+  width: 100%;
+}

@@ -1,0 +1,9 @@
+<app-course *ngFor="let course of courses"
+            [courseId]="course.courseId"
+            [imageUrl]="course.imageUrl"
+            [courseTitle]="course.courseTitle"
+            [showEditButtons]="showEditButtons"
+            [pricePerSession]="course.pricePerStudentForSession">
+
+</app-course>
+

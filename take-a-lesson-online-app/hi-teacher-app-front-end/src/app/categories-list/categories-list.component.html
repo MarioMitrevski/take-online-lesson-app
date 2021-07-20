@@ -1,0 +1,7 @@
+<p>FILTER BY</p>
+<mat-selection-list [multiple]="false" (selectionChange)="onSelect($event)">
+  <mat-list-option [value]="''">All</mat-list-option>
+  <mat-list-option  *ngFor="let category of categories$ | async" [value]="category.categoryId">
+    {{category.categoryName}}
+  </mat-list-option>
+</mat-selection-list>

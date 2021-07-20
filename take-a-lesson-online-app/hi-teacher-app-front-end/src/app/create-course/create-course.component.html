@@ -1,0 +1,23 @@
+<div class="biggerContainer">
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="basicCourseInfoForm.basicCourseInfoForm" label="Basic Course Information">
+      <app-basic-course-info-form #basicCourseInfoForm></app-basic-course-info-form>
+    </mat-step>
+    <mat-step [stepControl]="courseThemesForm.courseContentForm" label="Course content">
+      <app-course-themes #courseThemesForm></app-course-themes>
+    </mat-step>
+    <mat-step [stepControl] label="Course Groups">
+      <app-create-course-groups></app-create-course-groups>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" [disabled]="!(this.courseGroups.length !== 0)"
+                (click)="onCourseCreationFinished()">Finish
+        </button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

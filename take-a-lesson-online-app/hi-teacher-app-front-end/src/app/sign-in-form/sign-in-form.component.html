@@ -1,0 +1,33 @@
+<div class="signInIntro">
+  <h2>
+    Sign in to your account
+  </h2>
+  <p>
+    Build skills for today, tomorrow and beyond
+  </p>
+</div>
+<form (ngSubmit)="onSubmit()" #formElement="ngForm">
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" name="email" ngModel required email #email="ngModel">
+      <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" name="password" ngModel required #password="ngModel">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="password.invalid">You must enter a value</mat-error>
+    </mat-form-field>
+  </p>
+  <div class="centerButton">
+    <button mat-raised-button type='submit' class='customButton' color="accent">Sign In</button>
+  </div>
+
+</form>

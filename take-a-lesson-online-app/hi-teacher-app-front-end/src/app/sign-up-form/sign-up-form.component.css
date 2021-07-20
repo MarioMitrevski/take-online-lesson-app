@@ -1,0 +1,23 @@
+.signUpIntro{
+  text-align: center;
+  color: #3F51B5;
+  margin-bottom: 5%;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+.centerButton{
+  display: flex;
+  justify-content: center;
+}
+
+button{
+  height: auto;
+  width: 200px;
+}
+
+label{
+  margin-right: 3% ;
+}

@@ -1,0 +1,18 @@
+mat-toolbar{
+  justify-content: center;
+}
+
+
+.smallContainer{
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+mat-tab-group{
+  justify-content: center;
+}
+
+span{
+  color: #3F51B5;
+}

@@ -1,0 +1,83 @@
+<div class="signUpIntro">
+  <h2>
+    Create your account
+  </h2>
+  <p>
+    Build skills for today, tomorrow and beyond
+  </p>
+</div>
+<form (ngSubmit)="onSubmit()" #formElement="ngForm">
+
+  <p>
+    <mat-radio-group aria-label="Select an option" name="roleForSignUp" [(ngModel)]="roleForSignUp" required>
+      <mat-radio-button style="margin-right: 2%" value="student">I am a student</mat-radio-button>
+      <mat-radio-button value="teacher">I am a teacher</mat-radio-button>
+    </mat-radio-group>
+  </p>
+
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput name="firstName" ngModel required #firstName="ngModel">
+      <mat-error *ngIf="firstName.invalid">You must enter a value</mat-error>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput name="lastName" ngModel #lastName="ngModel">
+    </mat-form-field>
+  </p>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Date of birth</mat-label>
+    <input matInput [matDatepicker]="picker" name="birthDate" ngModel>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" *ngIf="roleForSignUp === 'teacher'">
+    <mat-label>About me:</mat-label>
+    <textarea rows="3" matInput name="teacherDescription" ngModel></textarea>
+  </mat-form-field>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" name="email" ngModel required email #email="ngModel">
+      <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" name="password" ngModel required #password="ngModel">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="password.invalid">You must enter a value</mat-error>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Confirm your password</mat-label>
+      <input matInput [type]="hideConfirm ? 'password' : 'text'" name="passwordConfirm" ngModel required #passwordConfirm="ngModel">
+      <button mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirm">
+        <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="passwordConfirm.invalid">You must enter a value</mat-error>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <label for="avatar">Choose a profile picture</label>
+    <input type="file" id="avatar" (change)="onFileSelected($event)" name="profilePicture" ngModel accept="image/png, image/jpg, image/jpeg">
+  </p>
+
+  <div class="centerButton">
+    <button mat-raised-button type='submit' style="margin-top: 1%" class='customButton' color="accent">Sign Up</button>
+  </div>
+
+</form>

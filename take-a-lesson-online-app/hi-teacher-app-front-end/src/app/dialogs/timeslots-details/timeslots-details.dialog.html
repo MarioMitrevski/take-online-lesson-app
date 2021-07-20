@@ -1,0 +1,26 @@
+<p *ngIf="!data.viewMode">Edit DateTimeSlots</p>
+<form [formGroup]="data.courseFormGroup">
+  <div formArrayName="DateTimeSlots">
+    <div [formGroupName]="i" *ngFor="let timeSlot of timeSlots.controls;let i = index" class="example-section">
+      <div class="example-margin" style="width: 45%;align-self: baseline">
+        <mat-form-field appearance="fill">
+          <mat-label>Starting DateTime</mat-label>
+          <input matInput type="datetime-local" formControlName="startDateTime" required>
+        </mat-form-field>
+      </div>
+      <div class="example-margin" style="width: 45%;align-self: baseline">
+        <mat-form-field appearance="fill">
+          <mat-label>Ending DateTime</mat-label>
+          <input matInput type="datetime-local" formControlName="endDateTime" required>
+        </mat-form-field>
+      </div>
+      <div class="example-margin" style="width: 45%;align-self: baseline">
+        <button *ngIf="!data.viewMode"  type="button" mat-raised-button color="accent" (click)="onDateTimeSlotDeletion(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <button *ngIf="!data.viewMode" type="button" mat-raised-button color="accent" (click)="addDateTimeSlot()">Add DateTimeSlot</button>
+</form>
+

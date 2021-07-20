@@ -1,0 +1,12 @@
+<div class="biggerContainer" *ngIf="courseDetail">
+  <form [formGroup]="courseGroupsForm">
+    <mat-accordion formArrayName="CourseGroups">
+      <app-edit-course-group *ngFor="let cg of courseGroups.controls;let i = index"
+                             [viewMode]="true"
+                             [courseGroupArrayIndex]="i"
+                             [courseGroupId]="cg.value.CourseGroupId"
+                             [courseGroupName]="cg.value.CourseGroupNameForDisplay"
+                             [courseGroupFormGroup]="cg"></app-edit-course-group>
+    </mat-accordion>
+  </form>
+</div>

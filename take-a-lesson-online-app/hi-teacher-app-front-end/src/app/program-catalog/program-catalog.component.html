@@ -1,0 +1,31 @@
+<div class="biggerContainer">
+  <h1>Program Catalog</h1>
+  <mat-form-field class="example-full-width">
+    <mat-label>Search</mat-label>
+    <input matInput #searchBox (input)="search(searchBox.value)" [(ngModel)]="searchTerm">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</div>
+<div class="smallContainer">
+  <div class=categoryList>
+    <mat-form-field class="selectSortType" appearance="fill">
+      <mat-label>Sort by:</mat-label>
+      <mat-select (selectionChange)="onFilterSelected($event)">
+        <mat-option *ngFor="let sortType of sortingTypes" [value]="sortType.value">
+          {{sortType.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <app-categories-list></app-categories-list>
+  </div>
+  <div class="coursesList" *ngIf="course">
+    <app-courses-list [courses]="course.data"></app-courses-list>
+    <mat-paginator [length]="length"
+                   [pageIndex]="page - 1"
+                   [pageSize]="pageSize"
+                   [pageSizeOptions]="[5, 10, 25, 100]"
+                   (page)="onPageChange($event)"
+    >
+    </mat-paginator>
+  </div>
+</div>

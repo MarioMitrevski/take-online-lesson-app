@@ -1,0 +1,43 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{courseGroupName}}
+    </mat-panel-title>
+    <mat-panel-description>
+      Edit this course group
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <form [formGroup]="courseGroupFormGroup">
+    <div class="example-section">
+      <mat-form-field style="width: 50%" class="example-margin">
+        <mat-label>Course Group Name</mat-label>
+        <input matInput formControlName="CourseGroupName"  required>
+      </mat-form-field>
+      <mat-form-field style="width: 50%" class="example-margin">
+        <mat-label>Price per student per session</mat-label>
+        <input matInput formControlName="CourseGroupGoogleMeetLink"  required>
+      </mat-form-field>
+    </div>
+    <div class="example-section">
+      <mat-form-field style="width: 50%" class="example-margin">
+        <mat-label>Minimum Number Of Students</mat-label>
+        <input matInput type="number" formControlName="MinStudents"  required>
+      </mat-form-field>
+      <mat-form-field style="width: 50%" class="example-margin">
+        <mat-label>Maximum Number Of Students</mat-label>
+        <input matInput type="number" formControlName="MaxStudents" required>
+      </mat-form-field>
+    </div>
+    <button  mat-raised-button color="primary"
+            type="button"
+            style="margin-right: 2%"
+            (click)="showDates()">Show TimeSlots
+    </button>
+    <button *ngIf="!viewMode" style="margin-right: 2%"  mat-raised-button color="primary" type="button"
+            (click)="onCourseGroupDeletion(courseGroupArrayIndex)">Delete Course Group
+    </button>
+    <button *ngIf="viewMode" (click)="enrollToCourse()" mat-raised-button color="accent">
+      Enroll to this group
+    </button>
+  </form>
+</mat-expansion-panel>

@@ -1,0 +1,18 @@
+mat-card {
+  margin-top: 3%;
+  background-color: #e3e3e3;
+}
+
+mat-card {
+  margin-bottom: 3%;
+}
+
+button {
+  margin-top: 5%
+}
+
+.leftTopAlign {
+  height: 100%;
+  width: 90%;
+  margin-top: 2%;
+}
